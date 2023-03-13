@@ -1,5 +1,4 @@
 import Movie from './Movie'
-import Navbar from './Navbar'
 
 export default async function Home() {
 	const data = await fetch(
@@ -8,8 +7,7 @@ export default async function Home() {
 	const res = await data.json()
 
 	return (
-		<main>
-			<Navbar />
+		<main className='mx-32 mb-12'>
 			<h1 className='text-4xl text-center my-10'>
 				Popular Movies Wikipedia 🎥
 			</h1>
