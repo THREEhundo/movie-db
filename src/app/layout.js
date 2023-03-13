@@ -15,7 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
-			<body className={`${jetBrainsMono.className}`}>{children}</body>
+			<body className={`${jetBrainsMono.className} mx-32 my-12`}>
+				{children}
+			</body>
 		</html>
 	)
 }

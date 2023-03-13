@@ -12,6 +12,9 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				jetBrainsMono: ['var(--font-jetBrainsMono)']
+			},
+			gridTemplateColumns: {
+				fluid: 'repeat(auto-fit,minmax(15rem,1fr))'
 			}
 		}
 	},
