@@ -11,7 +11,8 @@ const nextConfig = {
 				port: ''
 			}
 		]
-	}
+	},
+	reactStrictMode: false
 }
 
 module.exports = nextConfig
