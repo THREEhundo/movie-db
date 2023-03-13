@@ -8,6 +8,15 @@ const MovieDetail = async ({ params }) => {
 	)
 	const res = await data.json()
 
+	const youtubeData = await fetch(
+		`https://api.themoviedb.org/3/movie/${movie}/videos?api_key=${process.env.MOVIE_API_KEY}`
+	)
+	const youtubeRes = await youtubeData.json()
+	const ytUrl = 'https://youtube.com/embed/'
+	const ytKey = youtubeRes.results.filter(x =>
+		x.name.includes('Official Trailer')
+	)[0].key
+
 	return (
 		<div>
 			<div>
@@ -26,6 +35,15 @@ const MovieDetail = async ({ params }) => {
 					priority
 				/>
 				<p>{res.overview}</p>
+				<div className='relative h-0 pb-[56.25%]'>
+					<iframe
+						className='absolute top-0 left-0 w-full h-full'
+						src={ytUrl + ytKey}
+						title='YouTube video player'
+						frameborder='0'
+						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+						allowfullscreen></iframe>
+				</div>
 			</div>
 		</div>
 	)
