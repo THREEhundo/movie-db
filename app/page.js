@@ -1,4 +1,5 @@
 import Movie from './Movie'
+import Navbar from './Navbar'
 
 export default async function Home() {
 	const data = await fetch(
@@ -8,10 +9,11 @@ export default async function Home() {
 
 	return (
 		<main>
+			<Navbar />
 			<h1 className='text-4xl text-center my-10'>
 				Popular Movies Wikipedia 🎥
 			</h1>
-			<h2 className='text-2xl'>Trending</h2>
+			<h2 className='text-2xl'>Trending 📈</h2>
 			<div className='grid gap-14 grid-cols-fluid'>
 				{res.results.map((movie, i) => (
 					<Movie
