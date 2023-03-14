@@ -3,7 +3,7 @@ import Image from 'next/image'
 const Cast = async ({ imagePath, movie }) => {
 	// Fetch Cast
 	const castData = await fetch(
-		`https://api.themoviedb.org/3/movie/${movie}/credits?api_key=${process.env.MOVIE_API_KEY}`
+		`https://api.themoviedb.org/3/movie/${movie}/credits?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`
 	)
 	const castRes = await castData.json()
 
@@ -20,7 +20,7 @@ const Cast = async ({ imagePath, movie }) => {
 									height={600}
 									src={imagePath + actor.profile_path}
 									alt={`${actor.name}`}
-									contain
+									//contain
 									className='w-full relative'
 								/>
 								<h3 className='text-sm'>{actor.name}</h3>

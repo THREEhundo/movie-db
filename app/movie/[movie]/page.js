@@ -8,13 +8,13 @@ const MovieDetail = async ({ params }) => {
 
 	// Fetch Movie Details
 	const data = await fetch(
-		`https://api.themoviedb.org/3/movie/${movie}?api_key=${process.env.MOVIE_API_KEY}`
+		`https://api.themoviedb.org/3/movie/${movie}?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`
 	)
 	const res = await data.json()
 
 	// Fetch Youtube Link
 	const youtubeData = await fetch(
-		`https://api.themoviedb.org/3/movie/${movie}/videos?api_key=${process.env.MOVIE_API_KEY}`
+		`https://api.themoviedb.org/3/movie/${movie}/videos?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`
 	)
 	const youtubeRes = await youtubeData.json()
 	const ytUrl = 'https://youtube.com/embed/'
@@ -23,7 +23,7 @@ const MovieDetail = async ({ params }) => {
 	)[0].key
 
 	return (
-		<div>
+		<div className='mx-32 mb-12'>
 			<h2 className='text-2xl'>{res.title}</h2>
 			<h2 className='text-lg'>{res.release_date}</h2>
 			<h2>Runtime: {res.runtime} minutes</h2>
