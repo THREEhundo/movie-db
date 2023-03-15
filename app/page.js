@@ -1,7 +1,9 @@
 import Movie from './Movie'
 import Search from './Search'
+import SearchProvider from './search-provider'
+import SearchResults from './SearchResults'
 
-export default async function Home() {
+export default async function Home({ Component, pageProps }) {
 	const data = await fetch(
 		`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`
 	)
@@ -9,7 +11,10 @@ export default async function Home() {
 
 	return (
 		<main className='mx-32 mb-12'>
-			<Search />
+			<SearchProvider>
+				<Search pageProps={pageProps} />
+				<SearchResults pageProps={pageProps} />
+			</SearchProvider>
 			<h1 className='text-4xl text-center my-10'>
 				Popular Movies Wikipedia 🎥
 			</h1>
