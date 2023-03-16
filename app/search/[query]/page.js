@@ -9,6 +9,7 @@ import React, { useEffect, useState } from 'react'
 const SearchPage = ({ params }) => {
 	const { query } = params
 	const [searchResults, setSearchResults] = useState([])
+	const [isTablet, setIsTablet] = useState(false)
 
 	useEffect(() => {
 		async function fetchData() {
@@ -32,8 +33,16 @@ const SearchPage = ({ params }) => {
 		}
 	}, [])
 
+	useEffect(() => {
+		const handleResize = () => setIsTablet(window.innerWidth > 768)
+		handleResize()
+		window.addEventListener('resize', handleResize)
+
+		return () => window.removeEventListener('resize', handleResize)
+	}, [])
+
 	return (
-		<div className=' mx-16 md:mx-32 mb-12'>
+		<div className=' mx-16 md:mx-32 lg:mx-48 mb-12'>
 			<div>
 				Search Page
 				{searchResults.map(result => (
@@ -42,10 +51,10 @@ const SearchPage = ({ params }) => {
 						key={result.id}
 						className=''
 						href={`/movie/${result.id}`}>*/}
-						<figure className='sm:flex bg-slate-100 rounded-xl p-0 dark:bg-slate-800 '>
+						<figure className='flex flex-col md:flex-row items-center bg-slate-100 rounded-xl p-0 dark:bg-slate-800 '>
 							{/*md:max-h-[274px] overflow-hidden*/}
 							<Image
-								className='aspect-auto sm:max-h-72 rounded-none mx-auto'
+								className='w-[33.33%] object-cover md:mr-5 h-full rounded-none mx-auto'
 								src={imagePath + result.poster_path}
 								alt={result.title || result.name}
 								width={384}
@@ -64,12 +73,21 @@ const SearchPage = ({ params }) => {
 								</figcaption>
 								<blockquote>
 									<p className='text-sm font-small'>
-										<ShortenedText
-											text={result.overview}
-											maxLength={200}
-											linkText='...Read More'
-											linkUrl={`/movie/${result.id}`}
-										/>
+										{!isTablet ? (
+											<ShortenedText
+												text={result.overview}
+												maxLength={200}
+												linkText='...Read More'
+												linkUrl={`/movie/${result.id}`}
+											/>
+										) : (
+											<ShortenedText
+												text={result.overview}
+												maxLength={400}
+												linkText='...Read More'
+												linkUrl={`/movie/${result.id}`}
+											/>
+										)}
 									</p>
 								</blockquote>
 							</div>
