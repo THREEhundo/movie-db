@@ -52,7 +52,6 @@ const SearchPage = ({ params }) => {
 						className=''
 						href={`/movie/${result.id}`}>*/}
 						<figure className='flex flex-col md:flex-row items-center bg-slate-100 rounded-xl p-0 dark:bg-slate-800 '>
-							{/*md:max-h-[274px] overflow-hidden*/}
 							<Image
 								className='w-[33.33%] object-cover md:mr-5 h-full rounded-none mx-auto'
 								src={imagePath + result.poster_path}
