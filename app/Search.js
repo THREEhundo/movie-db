@@ -2,6 +2,8 @@
 
 import { useContext } from 'react'
 import { SearchContext } from './search-provider'
+import Movie from './Movie'
+import Link from 'next/link'
 
 const Search = () => {
 	const { query, results, handleSubmit, handleChange, loading } =
@@ -11,7 +13,9 @@ const Search = () => {
 		<section>
 			<form onSubmit={handleSubmit}>
 				<input type='text' value={query} onChange={handleChange} />
-				<button>Search</button>
+				<Link href={`/search/${query}`}>
+					<button>Search</button>
+				</Link>
 			</form>
 
 			{loading && <p>Loading...</p>}
@@ -21,11 +25,19 @@ const Search = () => {
 			)}
 
 			{!loading && results.length > 0 && (
-				<ul>
-					{results.map(result => (
-						<li key={result.id}>{result.title}</li>
+				<div className='grid gap-14 grid-cols-fluid'>
+					{results.map((movie, i) => (
+						<Movie
+							key={movie.id}
+							id={movie.id}
+							title={movie.title}
+							poster_path={movie.poster_path}
+							release_date={movie.release_date}
+							priority
+							i={i}
+						/>
 					))}
-				</ul>
+				</div>
 			)}
 		</section>
 	)

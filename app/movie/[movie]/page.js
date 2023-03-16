@@ -16,11 +16,12 @@ const MovieDetail = async ({ params }) => {
 	const youtubeData = await fetch(
 		`https://api.themoviedb.org/3/movie/${movie}/videos?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`
 	)
+
 	const youtubeRes = await youtubeData.json()
 	const ytUrl = 'https://youtube.com/embed/'
-	const ytKey = youtubeRes.results.filter(x =>
-		x.name.includes('Official Trailer')
-	)[0].key
+	console.log(youtubeRes.results)
+	const ytKey = youtubeRes.results.filter(x => x.name.includes('Trailer'))[0]
+		.key
 
 	return (
 		<div className='mx-32 mb-12'>
@@ -40,7 +41,7 @@ const MovieDetail = async ({ params }) => {
 			/>
 			<p>{res.overview}</p>
 
-			<Trailer ytUrl={ytUrl} ytKey={ytKey} />
+			{ytKey && <Trailer ytUrl={ytUrl} ytKey={ytKey} />}
 			<Cast imagePath={imagePath} movie={movie} />
 		</div>
 	)
