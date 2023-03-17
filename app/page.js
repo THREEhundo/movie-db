@@ -11,7 +11,7 @@ export default async function Home({ Component, pageProps }) {
 	console.table(res.results)
 
 	return (
-		<main className='mx-32 mb-12'>
+		<main className='mx-12 md:mx-32 mb-12'>
 			<SearchProvider>
 				<Search pageProps={pageProps} />
 			</SearchProvider>
@@ -19,7 +19,7 @@ export default async function Home({ Component, pageProps }) {
 				Popular Movies Wikipedia 🎥
 			</h1>
 			<h2 className='text-2xl text-center my-3'>Trending 📈</h2>
-			<div className='grid gap-14 grid-cols-fluid'>
+			<div className='grid gap-14 grid-cols-fluid justify-center'>
 				{res.results.map((movie, i) => (
 					<Movie
 						key={movie.id}
