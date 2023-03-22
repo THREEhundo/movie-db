@@ -3,33 +3,38 @@
 import axios from 'axios'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
-const SearchPage = ({ params }) => {
-	const { query } = params
+const SearchResults = ({ params }) => {
+	//const { query } = params
 	const [searchResults, setSearchResults] = useState([])
 	const [isTablet, setIsTablet] = useState(false)
+
+	const search = useSearchParams()
+	const searchQuery = search ? search?.get('query') : null
+	const encodedSearchQuery = encodeURI(searchQuery || '')
 
 	useEffect(() => {
 		async function fetchData() {
 			const res = await axios.get(
-				`https://api.themoviedb.org/3/search/multi?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`
+				`https://api.themoviedb.org/3/search/multi?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}&language=en-US&query=${searchQuery}&page=1&include_adult=false`
 			)
 			console.log(res.data.results)
 			setSearchResults(res.data.results)
 		}
 		fetchData()
-	}, [query])
+	}, [searchQuery])
 	const imagePath = 'https://image.tmdb.org/t/p/original/'
-
-	useEffect(() => {
-		async function movieData() {
-			const data = await fetch(
-				`https://api.themoviedb.org/3/movie/${movie}?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`
-			)
-		}
-	}, [])
+	//
+	//	useEffect(() => {
+	//		async function movieData() {
+	//			const data = await fetch(
+	//				`https://api.themoviedb.org/3/movie/${movie}?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`
+	//			)
+	//		}
+	//	}, [])
 
 	useEffect(() => {
 		const handleResize = () => setIsTablet(window.innerWidth > 768)
@@ -41,13 +46,12 @@ const SearchPage = ({ params }) => {
 
 	return (
 		<div className=' mx-16 md:mx-32 lg:mx-48 mb-12 flex flex-col items-center'>
-			Results
 			{searchResults.map(
 				result =>
 					result.poster_path && (
 						<Link
 							key={result.id}
-							href={`/movie/${result.id}`}
+							href={`/${result.media_type}/${result.id}`}
 							className='flex flex-col items-center  border rounded-lg shadow md:flex-row md:max-w-xl  border-gray-700 bg-gray-800 hover:bg-gray-700 my-3'>
 							<Image
 								className='object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg'
@@ -105,4 +109,4 @@ const ShortenedText = ({ text, maxLength, linkText }) => {
 	)
 }
 
-export default SearchPage
+export default SearchResults

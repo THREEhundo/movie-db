@@ -1,17 +1,26 @@
 'use client'
 
-import { useContext } from 'react'
+import { useCallback, useContext, useState } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation'
 import { SearchContext } from './search-provider'
 import Movie from './Movie'
 import Link from 'next/link'
 
-const Search = () => {
-	const { query, results, handleSubmit, handleChange, loading } =
-		useContext(SearchContext)
+const Searchbar = () => {
+	//const { query, results, handleSubmit, handleChange, loading } =
+	//	useContext(SearchContext)
+
+	//const pathname = usePathname()
+	const [searchQuery, setSearchQuery] = useState('')
+
+	const handleSearch = e => {
+		e.preventDefault()
+		setSearchQuery(encodeURI(searchQuery))
+	}
 
 	return (
 		<section>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSearch}>
 				<label
 					htmlFor='default-search'
 					className='mb-2 text-sm font-medium sr-only text-white'>
@@ -35,14 +44,14 @@ const Search = () => {
 					</div>
 					<input
 						type='text'
-						value={query}
-						onChange={handleChange}
+						value={searchQuery}
+						onChange={e => setSearchQuery(e.target.value)}
 						id='default-search'
 						className='block w-full p-4 pl-10 text-sm border rounded-lg bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-purple-500 focus:border-purple-500'
 						placeholder='Search'
 						required
 					/>
-					<Link href={`/search/${query}`}>
+					<Link href={`/search?query=${searchQuery}`}>
 						<button className='text-white absolute right-2.5 bottom-2.5 bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2'>
 							Search
 						</button>
@@ -50,7 +59,7 @@ const Search = () => {
 				</div>
 			</form>
 
-			{loading && <p>Loading...</p>}
+			{/*{loading && <p>Loading...</p>}
 
 			{!loading && results.length === 0 && !results && (
 				<p>No results found.</p>
@@ -70,9 +79,9 @@ const Search = () => {
 						/>
 					))}
 				</div>
-			)}
+			)}*/}
 		</section>
 	)
 }
 
-export default Search
+export default Searchbar

@@ -4,13 +4,7 @@ const nextConfig = {
 		appDir: true
 	},
 	images: {
-		remotePatterns: [
-			{
-				protocol: 'https',
-				hostname: 'image.tmdb.org',
-				port: ''
-			}
-		]
+		domains: ['image.tmdb.org', 'via.placeholder.com']
 	},
 	reactStrictMode: false
 }

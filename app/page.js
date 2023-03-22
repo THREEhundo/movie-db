@@ -1,5 +1,5 @@
 import Movie from './Movie'
-import Search from './Search'
+import Searchbar from './Searchbar'
 import SearchProvider from './search-provider'
 
 export default async function Home({ Component, pageProps }) {
@@ -8,12 +8,12 @@ export default async function Home({ Component, pageProps }) {
 	)
 	const res = await data.json()
 
-	console.table(res.results)
+	//console.table(res.results)
 
 	return (
 		<main className='mx-12 md:mx-32 mb-12'>
 			<SearchProvider>
-				<Search pageProps={pageProps} />
+				<Searchbar pageProps={pageProps} />
 			</SearchProvider>
 			<h1 className='text-4xl text-center my-10'>
 				Popular Movies Wikipedia 🎥
