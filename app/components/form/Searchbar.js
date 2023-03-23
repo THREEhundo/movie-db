@@ -1,16 +1,9 @@
 'use client'
 
 import { useCallback, useContext, useState } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
-import { SearchContext } from './search-provider'
-import Movie from './Movie'
 import Link from 'next/link'
 
 const Searchbar = () => {
-	//const { query, results, handleSubmit, handleChange, loading } =
-	//	useContext(SearchContext)
-
-	//const pathname = usePathname()
 	const [searchQuery, setSearchQuery] = useState('')
 
 	const handleSearch = e => {

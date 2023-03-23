@@ -6,23 +6,17 @@ const TvShow = async ({ params }) => {
 	const { id } = params
 	const imagePath = 'https://image.tmdb.org/t/p/original'
 
-	const tvData = await fetch(
+	const data = await fetch(
 		`https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`
 	)
-	const tvRes = await tvData.json()
-	const youtubeTvData = await fetch(
+	const tvRes = await data.json()
+	const youtubeData = await fetch(
 		`https://api.themoviedb.org/3/tv/${id}/videos?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}&language=en-US`
 	)
-	const youtubeTvRes = await youtubeTvData.json()
-	console.log(youtubeTvRes)
-	let youtubeKey = youtubeTvRes?.results?.filter(x =>
-		x.type.includes('Opening Credits')
-	)[0]?.key
-
-	if (!youtubeKey)
-		youtubeKey = youtubeTvRes?.results?.filter(x =>
-			x.type.includes('Trailer')
-		)[0]?.key
+	const youtubeRes = await youtubeData.json()
+	let youtubeKey = youtubeRes?.results?.find(
+		x => x.type.includes('Opening Credits') || x.type.includes('Trailer')
+	)?.key
 
 	const youtubeUrl = 'https://youtube.com/embed/'
 

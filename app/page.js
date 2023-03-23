@@ -1,6 +1,5 @@
 import Movie from './Movie'
-import Searchbar from './Searchbar'
-import SearchProvider from './search-provider'
+import Searchbar from './components/form/Searchbar'
 
 export default async function Home({ Component, pageProps }) {
 	const data = await fetch(
@@ -8,13 +7,9 @@ export default async function Home({ Component, pageProps }) {
 	)
 	const res = await data.json()
 
-	//console.table(res.results)
-
 	return (
 		<main className='mx-12 md:mx-32 mb-12'>
-			<SearchProvider>
-				<Searchbar pageProps={pageProps} />
-			</SearchProvider>
+			<Searchbar pageProps={pageProps} />
 			<h1 className='text-4xl text-center my-10'>
 				Popular Movies Wikipedia 🎥
 			</h1>
