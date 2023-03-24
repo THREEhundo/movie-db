@@ -7,6 +7,7 @@ import { DropdownItem } from 'flowbite-react/lib/esm/components/Dropdown/Dropdow
 import { NavbarCollapse } from 'flowbite-react/lib/esm/components/Navbar/NavbarCollapse'
 import { NavbarToggle } from 'flowbite-react/lib/esm/components/Navbar/NavbarToggle'
 import Link from 'next/link'
+import SignInButton from './components/auth/SignInButton'
 
 const Nav = () => {
 	return (
@@ -17,7 +18,7 @@ const Nav = () => {
 				</span>
 			</Link>
 			<div className='flex md:order-2'>
-				<Dropdown
+				{/*<Dropdown
 					arrowIcon={false}
 					inline={true}
 					label={
@@ -38,8 +39,9 @@ const Nav = () => {
 					<DropdownItem>Earnings</DropdownItem>
 					<DropdownDivider />
 					<DropdownItem>Sign out</DropdownItem>
-				</Dropdown>
-				<NavbarToggle />
+				</Dropdown>*/}
+				<SignInButton />
+				{/*<NavbarToggle />*/}
 			</div>
 			<NavbarCollapse>
 				<Dropdown

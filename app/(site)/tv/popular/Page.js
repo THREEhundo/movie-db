@@ -1,4 +1,4 @@
-import Popular from '../../tv/popular/Popular'
+import Popular from './Popular'
 
 const Page = () => {
 	return <Popular />
