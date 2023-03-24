@@ -1,5 +1,4 @@
 const Trailer = ({ youtubeUrl, youtubeKey }) => {
-	console.log(`youtube tv key: ${youtubeKey}`)
 	return (
 		<div className='relative h-0 pb-[56.25%]'>
 			<iframe

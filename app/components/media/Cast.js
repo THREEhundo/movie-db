@@ -7,8 +7,6 @@ const Cast = async ({ imagePath, id, mediaType }) => {
 	)
 	const castRes = await castData.json()
 
-	//console.log(castRes)
-
 	const feedUrl = url =>
 		url !== null ? imagePath + url : 'http://via.placeholder.com/256x384'
 

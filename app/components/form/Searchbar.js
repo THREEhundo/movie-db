@@ -12,7 +12,7 @@ const Searchbar = () => {
 	}
 
 	return (
-		<section>
+		<section className='my-2 md:max-w-xl mx-auto'>
 			<form onSubmit={handleSearch}>
 				<label
 					htmlFor='default-search'
@@ -51,28 +51,6 @@ const Searchbar = () => {
 					</Link>
 				</div>
 			</form>
-
-			{/*{loading && <p>Loading...</p>}
-
-			{!loading && results.length === 0 && !results && (
-				<p>No results found.</p>
-			)}
-
-			{!loading && results.length > 0 && (
-				<div className='grid gap-14 grid-cols-fluid'>
-					{results.map((movie, i) => (
-						<Movie
-							key={movie.id}
-							id={movie.id}
-							title={movie.title}
-							poster_path={movie.poster_path}
-							release_date={movie.release_date}
-							priority
-							i={i}
-						/>
-					))}
-				</div>
-			)}*/}
 		</section>
 	)
 }

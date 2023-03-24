@@ -1,6 +1,6 @@
 import './globals.css'
 import { JetBrains_Mono } from '@next/font/google'
-import Navbar from './Navbar'
+import Nav from './Nav'
 
 const jetBrainsMono = JetBrains_Mono({
 	weight: ['400', '700'],
@@ -15,9 +15,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang='en'>
+		<html lang='en' className='dark'>
 			<body className={jetBrainsMono.className}>
-				<Navbar />
+				<Nav />
 				{children}
 			</body>
 		</html>
