@@ -1,7 +1,7 @@
 import './globals.css'
 import { JetBrains_Mono } from '@next/font/google'
-import Nav from './Nav'
-import Provider from './Provider'
+import Nav from './nav'
+import Provider from './provider'
 
 const jetBrainsMono = JetBrains_Mono({
 	weight: ['400', '700'],

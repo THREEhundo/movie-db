@@ -1,5 +1,5 @@
-import Searchbar from '../../components/form/Searchbar'
-import MovieCard from '../../components/media/MovieCard'
+import Searchbar from '../../components/form/searchbar'
+import MovieCard from '../../components/media/movieCard'
 
 const TopRated = async () => {
 	const data = await fetch(

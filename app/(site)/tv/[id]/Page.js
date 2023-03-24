@@ -1,4 +1,4 @@
-import TvShow from './TvShow'
+import TvShow from './tvShow'
 
 const Page = ({ params }) => {
 	return <TvShow params={params} />

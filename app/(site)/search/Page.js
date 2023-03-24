@@ -1,5 +1,5 @@
-import Searchbar from '../components/form/Searchbar'
-import SearchResults from './SearchResults'
+import Searchbar from '../components/form/searchbar'
+import SearchResults from './searchResults'
 
 const SearchPage = ({ params }) => {
 	return (

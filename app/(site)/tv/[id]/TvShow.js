@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import Searchbar from '../../components/form/Searchbar'
-import Cast from '../../components/media/Cast'
-import Trailer from '../../components/media/Trailer'
-import TvShowDetails from '../../components/media/TvShowDetails'
+import Searchbar from '../../components/form/searchbar'
+import Cast from '../../components/media/cast'
+import Trailer from '../../components/media/trailer'
+import TvShowDetails from '../../components/media/tvShowDetails'
 
 const TvShow = async ({ params }) => {
 	const { id } = params

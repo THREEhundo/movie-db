@@ -1,4 +1,4 @@
-import TopRated from './TopRated'
+import TopRated from './topRated'
 
 const Page = () => {
 	return <TopRated />

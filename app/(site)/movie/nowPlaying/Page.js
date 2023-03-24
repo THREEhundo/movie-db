@@ -1,4 +1,4 @@
-import NowPlaying from './NowPlaying'
+import NowPlaying from './nowPlaying'
 
 const Page = () => {
 	return <NowPlaying />

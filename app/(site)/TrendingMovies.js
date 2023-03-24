@@ -1,5 +1,5 @@
-import MediaCarousel from './components/ui/Carousel'
-import MovieCard from './components/media/MovieCard'
+import MediaCarousel from './components/ui/carousel'
+import MovieCard from './components/media/movieCard'
 
 const TrendingMovies = async () => {
 	const data = await fetch(

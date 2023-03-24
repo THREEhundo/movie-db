@@ -7,7 +7,7 @@ import { DropdownItem } from 'flowbite-react/lib/esm/components/Dropdown/Dropdow
 import { NavbarCollapse } from 'flowbite-react/lib/esm/components/Navbar/NavbarCollapse'
 import { NavbarToggle } from 'flowbite-react/lib/esm/components/Navbar/NavbarToggle'
 import Link from 'next/link'
-import SignInButton from './components/auth/SignInButton'
+import SignInButton from './components/auth/signInButton'
 
 const Nav = () => {
 	return (

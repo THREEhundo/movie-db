@@ -1,4 +1,4 @@
-import OnAir from './OnAir'
+import OnAir from './onAir'
 
 const Page = () => {
 	return <OnAir />

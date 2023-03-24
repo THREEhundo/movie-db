@@ -1,5 +1,5 @@
-import Searchbar from '../../components/form/Searchbar'
-import TvCard from '../../components/media/TvCard'
+import Searchbar from '../../components/form/searchbar'
+import TvCard from '../../components/media/tvCard'
 
 const Popular = async () => {
 	const data = await fetch(

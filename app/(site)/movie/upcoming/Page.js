@@ -1,5 +1,5 @@
 import React from 'react'
-import Upcoming from './Upcoming'
+import Upcoming from './upcoming'
 
 const Page = () => {
 	return <Upcoming />

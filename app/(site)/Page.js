@@ -1,5 +1,5 @@
-import Searchbar from './components/form/Searchbar'
-import TrendingMovies from './TrendingMovies'
+import Searchbar from './components/form/searchbar'
+import TrendingMovies from './trendingMovies'
 
 export default function Home() {
 	return (

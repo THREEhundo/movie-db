@@ -1,7 +1,7 @@
-import Searchbar from '../../components/form/Searchbar'
-import Cast from '../../components/media/Cast'
-import MovieDetails from '../../components/media/MovieDetails'
-import Trailer from '../../components/media/Trailer'
+import Searchbar from '../../components/form/searchbar'
+import Cast from '../../components/media/cast'
+import MovieDetails from '../../components/media/movieDetails'
+import Trailer from '../../components/media/trailer'
 
 const Movie = async ({ params }) => {
 	const { id } = params

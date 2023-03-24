@@ -1,6 +1,6 @@
-import GoogleLoginButton from '../../(site)/components/auth/GoogleSignInButton'
-import TextField from '../../(site)/components/form/TextField'
-import Button from '../../(site)/components/ui/Button'
+import GoogleLoginButton from '../../(site)/components/auth/googleSignInButton'
+import TextField from '../../(site)/components/form/textField'
+import Button from '../../(site)/components/ui/button'
 
 const SignInPage = () => {
 	return (

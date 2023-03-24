@@ -2,7 +2,7 @@ import '../(site)/globals.css'
 import { ChevronLeftIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import React from 'react'
-import Provider from '../(site)/Provider'
+import Provider from '../(site)/provider'
 
 export const metadata = {
 	title: 'Twitter Clone Signin',
