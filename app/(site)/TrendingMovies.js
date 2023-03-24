@@ -1,4 +1,3 @@
-import MediaCarousel from './components/ui/carousel'
 import MovieCard from './components/media/movieCard'
 
 const TrendingMovies = async () => {
@@ -10,7 +9,6 @@ const TrendingMovies = async () => {
 
 	return (
 		<>
-			{/*<MediaCarousel movieIds={movieIds} />*/}
 			<h1 className='text-4xl text-center my-10'>
 				Popular Movies Wikipedia 🎥
 			</h1>

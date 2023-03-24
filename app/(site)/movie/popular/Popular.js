@@ -1,4 +1,3 @@
-import Searchbar from '../../components/form/searchbar'
 import MovieCard from '../../components/media/movieCard'
 
 const Popular = async () => {
@@ -9,7 +8,6 @@ const Popular = async () => {
 
 	return (
 		<>
-			<Searchbar />
 			<h1 className='text-4xl text-center my-10'>Popular Movies 🎥</h1>
 			<div className='mx-12 md:mx-32 mb-12 grid gap-14 grid-cols-fluid justify-center'>
 				{res.results.map((movie, i) => (

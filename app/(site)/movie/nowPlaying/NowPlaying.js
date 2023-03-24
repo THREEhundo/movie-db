@@ -1,5 +1,4 @@
 import React from 'react'
-import Searchbar from '../../components/form/searchbar'
 import MovieCard from '../../components/media/movieCard'
 
 const NowPlaying = async () => {
@@ -10,7 +9,6 @@ const NowPlaying = async () => {
 
 	return (
 		<>
-			<Searchbar />
 			<h1 className='text-4xl text-center my-10'>
 				Movies Now Playing 🎥
 			</h1>

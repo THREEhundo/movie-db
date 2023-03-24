@@ -1,4 +1,3 @@
-import Searchbar from '../../components/form/searchbar'
 import Cast from '../../components/media/cast'
 import MovieDetails from '../../components/media/movieDetails'
 import Trailer from '../../components/media/trailer'
@@ -27,7 +26,6 @@ const Movie = async ({ params }) => {
 
 	return (
 		<div className='mx-32 mb-12'>
-			<Searchbar />
 			<MovieDetails
 				title={res.title}
 				releaseDate={res.release_date}

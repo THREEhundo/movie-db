@@ -1,4 +1,3 @@
-import Searchbar from '../../components/form/searchbar'
 import TvCard from '../../components/media/tvCard'
 
 const TopRated = async () => {
@@ -12,7 +11,6 @@ const TopRated = async () => {
 	)
 	return (
 		<>
-			<Searchbar />
 			<h1 className='text-4xl text-center my-10'>
 				Top Rated TV Shows 📺
 			</h1>

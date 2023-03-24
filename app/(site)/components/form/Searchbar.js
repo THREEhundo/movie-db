@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useContext, useState } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 
 const Searchbar = () => {
@@ -10,9 +10,9 @@ const Searchbar = () => {
 		e.preventDefault()
 		setSearchQuery(encodeURI(searchQuery))
 	}
-
+	//my-2 md:max-w-xl mx-auto
 	return (
-		<section className='my-2 md:max-w-xl mx-auto'>
+		<div className='form-control'>
 			<form onSubmit={handleSearch}>
 				<label
 					htmlFor='default-search'
@@ -51,8 +51,18 @@ const Searchbar = () => {
 					</Link>
 				</div>
 			</form>
-		</section>
+		</div>
 	)
 }
 
 export default Searchbar
+
+{
+	/*<div className='form-control'>
+					<input
+						type='text'
+						placeholder='Search'
+						className='input input-bordered'
+					/>
+				</div>*/
+}
