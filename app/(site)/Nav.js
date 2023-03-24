@@ -72,6 +72,7 @@ const Nav = () => {
 			</div>
 			<div className='flex-none gap-2'>
 				<Searchbar />
+				<SignInButton />
 				<div className='dropdown dropdown-end'>
 					<label
 						tabIndex={0}
