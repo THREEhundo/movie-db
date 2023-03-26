@@ -5,8 +5,8 @@ import React from 'react'
 import Provider from '../(site)/provider'
 
 export const metadata = {
-	title: 'Twitter Clone Signin',
-	description: 'Twitter clone Signin'
+	title: 'Sign In',
+	description: 'Signin Page'
 }
 
 const AuthLayout = ({ children }) => {

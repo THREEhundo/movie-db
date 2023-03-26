@@ -1,6 +1,6 @@
 import './globals.css'
 import { JetBrains_Mono } from '@next/font/google'
-import Nav from './nav'
+import Nav from './header'
 import Provider from './provider'
 
 const jetBrainsMono = JetBrains_Mono({

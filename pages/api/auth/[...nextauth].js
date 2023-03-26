@@ -13,7 +13,7 @@ export default async function auth(req, res) {
 		],
 
 		pages: {
-			signIn: '/signin'
+			//signIn: '/signin'
 		},
 
 		adapter: PrismaAdapter(prisma),

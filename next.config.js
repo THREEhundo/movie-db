@@ -4,7 +4,11 @@ const nextConfig = {
 		appDir: true
 	},
 	images: {
-		domains: ['image.tmdb.org', 'via.placeholder.com']
+		domains: [
+			'image.tmdb.org',
+			'via.placeholder.com',
+			'lh3.googleusercontent.com'
+		]
 	},
 	reactStrictMode: false
 }

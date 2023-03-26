@@ -1,24 +1,38 @@
 'use client'
 
-import { useSession, signIn, signOut } from 'next-auth/react'
+import { useSession, signIn } from 'next-auth/react'
 import Image from 'next/image'
+import SignOutButton from './signOutButton'
 
 const SignInButton = () => {
 	const { data: session } = useSession()
+	console.log(signIn)
 
 	if (session) {
 		return (
 			<div className='relative h-12 w-12'>
 				{session?.user?.image ? (
-					<Image
-						src={session.user.image}
-						alt={session.user.name}
-						className='inline-block rounded-full'
-						fill
-						sizes='(max-width: 768px) 100vw,
+					<div className='dropdown dropdown-end'>
+						<label tabIndex={0} className='m-1'>
+							<Image
+								src={session.user.image}
+								alt={session.user.name}
+								className='inline-block rounded-full'
+								width={48}
+								height={48}
+								sizes='(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw'
-					/>
+							/>
+						</label>
+						<ul
+							tabIndex={0}
+							className='dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52'>
+							<li>
+								<SignOutButton />
+							</li>
+						</ul>
+					</div>
 				) : (
 					<span className='inline-block h-12 w-12 overflow-hidden rounded-full bg-gray-100'>
 						<svg
@@ -36,7 +50,7 @@ const SignInButton = () => {
 	return (
 		<button
 			className='text-sm font-medium tracking-wider uppercase text-stone-500'
-			onClick={() => signIn()}>
+			onClick={() => signIn(null, { callbackUrl: '/' })}>
 			Sign In
 		</button>
 	)
