@@ -6,7 +6,6 @@ import SignOutButton from './signOutButton'
 
 const SignInButton = () => {
 	const { data: session } = useSession()
-	console.log(signIn)
 
 	if (session) {
 		return (
@@ -50,7 +49,7 @@ const SignInButton = () => {
 	return (
 		<button
 			className='text-sm font-medium tracking-wider uppercase text-stone-500'
-			onClick={() => signIn(null, { callbackUrl: '/' })}>
+			onClick={() => signIn()}>
 			Sign In
 		</button>
 	)

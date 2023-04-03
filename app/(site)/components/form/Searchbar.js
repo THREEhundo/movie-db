@@ -9,6 +9,7 @@ const Searchbar = () => {
 	const handleSearch = e => {
 		e.preventDefault()
 		setSearchQuery(encodeURI(searchQuery))
+		setSearchQuery('')
 	}
 	//my-2 md:max-w-xl mx-auto
 	return (
